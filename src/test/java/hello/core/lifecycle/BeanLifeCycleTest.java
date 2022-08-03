@@ -12,7 +12,7 @@ public class BeanLifeCycleTest {
     @Test
     public void lifeCycleTest() {
         ConfigurableApplicationContext ac = new AnnotationConfigApplicationContext(LifeCycleConfig.class);
-        NetworkClient client = ac.getBean(NetworkClient.class);
+        NetworkClient client = ac.getBean(NetworkClient.class); // 이때 빈이 주입되고 나서 init() 호출되는 것 같음.
         ac.close();
     }
 
